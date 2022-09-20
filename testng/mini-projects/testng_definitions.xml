@@ -1,0 +1,23 @@
+<suite name="tests" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="testng_definitions.xsd">
+	<test name="testCase1">
+		<parameter name="input1" value="0" />
+		<parameter name="input2" value="1" />
+		<classes>
+			<class name="testng.TestCalculator" />
+		</classes>
+	</test>
+	<test name="testCase2">
+		<parameter name="input1" value="-1" />
+		<parameter name="input2" value="2" />
+		<classes>
+			<class name="testng.TestCalculator" />
+		</classes>
+	</test>
+	<test name="testCase3">
+		<parameter name="input1" value="3" />
+		<parameter name="input2" value="5" />
+		<classes>
+			<class name="testng.TestCalculator" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,5 @@
+RequestUrl,statusCode
+/posts,200
+/posts/2,200
+/comments?postId=99,200
+/posts/11/comments,200

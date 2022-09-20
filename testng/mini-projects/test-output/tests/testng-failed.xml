@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [tests]">
+  <test thread-count="5" name="testCase1(failed)">
+    <classes>
+      <class name="testng.TestCalculator">
+        <methods>
+          <include name="testCalculateSum"/>
+        </methods>
+      </class> <!-- testng.TestCalculator -->
+    </classes>
+  </test> <!-- testCase1(failed) -->
+  <test thread-count="5" name="testCase2(failed)">
+    <classes>
+      <class name="testng.TestCalculator">
+        <methods>
+          <include name="testCalculateSum"/>
+        </methods>
+      </class> <!-- testng.TestCalculator -->
+    </classes>
+  </test> <!-- testCase2(failed) -->
+  <test thread-count="5" name="testCase3(failed)">
+    <classes>
+      <class name="testng.TestCalculator">
+        <methods>
+          <include name="testCalculateSum"/>
+        </methods>
+      </class> <!-- testng.TestCalculator -->
+    </classes>
+  </test> <!-- testCase3(failed) -->
+</suite> <!-- Failed suite [tests] -->
