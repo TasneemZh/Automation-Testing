@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-09T20:15:14 IDT" name="Default suite" finished-at="2022-09-09T20:15:14 IDT" duration-ms="42">
+    <groups>
+    </groups>
+    <test started-at="2022-09-09T20:15:14 IDT" name="Default test" finished-at="2022-09-09T20:15:14 IDT" duration-ms="42">
+      <class name="factory.TestCircle">
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@294425a7, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@3e58a80e, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@4a94ee4, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@4cc451f2, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@4fb0f2b9, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@4fb61f4a, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@6379eb, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@67d48005, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@6b927fb, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@79924b, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@7b9a4292, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+        <test-method signature="testArea()[pri:0, instance:factory.TestCircle@a514af7, instance params:[]]" started-at="2022-09-09T20:15:14 IDT" name="testArea" finished-at="2022-09-09T20:15:14 IDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testArea -->
+      </class> <!-- factory.TestCircle -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

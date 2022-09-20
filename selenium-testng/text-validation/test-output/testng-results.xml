@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="8" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-20T07:46:05 IDT" name="Default suite" finished-at="2022-09-20T07:46:50 IDT" duration-ms="45215">
+    <groups>
+    </groups>
+    <test started-at="2022-09-20T07:46:05 IDT" name="Default test" finished-at="2022-09-20T07:46:50 IDT" duration-ms="45215">
+      <class name="textValidation.TestContent">
+        <test-method is-config="true" signature="login()[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:45:38 IDT" name="login" finished-at="2022-09-20T07:46:05 IDT" duration-ms="26706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:05 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:09 IDT" duration-ms="3999" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Manager]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:09 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:16 IDT" duration-ms="7466" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[New Customer]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:16 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:22 IDT" duration-ms="5366" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edit Customer]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:22 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:30 IDT" duration-ms="8340" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Delete Customer]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:30 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:31 IDT" duration-ms="1101" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[New Account]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="addAccount.php">...</a> is not clickable at point (120, 513). Other element would receive the click: <p align="right">...</p>
+  (Session info: chrome=105.0.5195.127)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'LAPTOP-BDELJV31', ip: '10.0.0.31', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2a711b85e5980e9986bb656c6c7322f, clickElement {id=e7f9f277-948e-42a2-bbd4-ea0c6ef4b7e4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61089/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b2a711b85e5980e9986bb656c6c7322f)] -> link text: New Account]
+Session ID: b2a711b85e5980e9986bb656c6c7322f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="addAccount.php">...</a> is not clickable at point (120, 513). Other element would receive the click: <p align="right">...</p>
+  (Session info: chrome=105.0.5195.127)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'LAPTOP-BDELJV31', ip: '10.0.0.31', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2a711b85e5980e9986bb656c6c7322f, clickElement {id=e7f9f277-948e-42a2-bbd4-ea0c6ef4b7e4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61089/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b2a711b85e5980e9986bb656c6c7322f)] -> link text: New Account]
+Session ID: b2a711b85e5980e9986bb656c6c7322f
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+at textValidation.TestContent.testTexts(TestContent.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:31 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:37 IDT" duration-ms="5388" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edit Account]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:37 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:41 IDT" duration-ms="4395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Delete Account]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:41 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:45 IDT" duration-ms="4434" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mini Statement]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:45 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:50 IDT" duration-ms="4574" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Customised Statement]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at textValidation.TestContent.testTexts(TestContent.java:56)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method signature="testTexts(java.lang.String)[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:50 IDT" name="testTexts" data-provider="getBtnText" finished-at="2022-09-20T07:46:50 IDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Log out]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTexts -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:textValidation.TestContent@18078bef]" started-at="2022-09-20T07:46:50 IDT" name="closeBrowser" finished-at="2022-09-20T07:46:50 IDT" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- textValidation.TestContent -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

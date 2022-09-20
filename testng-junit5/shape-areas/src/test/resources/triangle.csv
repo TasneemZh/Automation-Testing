@@ -1,0 +1,13 @@
+base,height,result
+3,3,4.5
+7.23,7.23,26.14
+9.542,9.542,45.52
+1.2653,1.2653,0.8
+0,0,error
+,,error
+text,text,error
+[],[],error
+{},{},error
+.,.,error
+-9,-9,error
+6.57E+300,6.57E+300,2.16E+601
