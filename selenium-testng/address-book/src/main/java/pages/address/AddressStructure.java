@@ -13,16 +13,11 @@ public class AddressStructure {
 
 	public AddressStructure(WebDriver driver) {
 		this.driver = driver;
-		this.rows = driver.findElements(By.xpath("//table/tbody/tr"));
 	}
 
 	public int getNumberOfRows() {
+		this.rows = driver.findElements(By.xpath("//table/tbody/tr"));
 		return this.rows.size();
-	}
-
-	public void addRow() {
-		this.row = driver.findElement(By.xpath("//table/tbody/tr[" + this.getNumberOfRows() + 1 + "]"));
-		this.rows.add(row);
 	}
 
 	public String getSpecificAddressField(String addrField) {
@@ -31,17 +26,10 @@ public class AddressStructure {
 		for (int index = 1; index <= addressFields.size(); index++) {
 			rowData = driver.findElement(By.xpath("/html/body/div/p[" + index + "]/span[2]"));
 			String field = rowData.getAttribute("data-test");
-			if (field == addrField) {
+			if (field.equals(addrField)) {
 				return rowData.getText();
 			}
 		}
 		return null;
 	}
-
-	// could be changed
-	public void removeRow(WebElement row) {
-		this.rows.remove(row);
-	}
-
-	// possibly another method for edit
 }

@@ -13,8 +13,10 @@ public class AddressForm {
 	WebElement city;
 	Select state;
 	WebElement zipCode;
-	WebElement usCountry;
-	WebElement caCountry;
+	WebElement usCountryRadio;
+	WebElement usCountryLabel;
+	WebElement caCountryRadio;
+	WebElement caCountryLabel;
 	WebElement birthday;
 	WebElement createAddressBtn;
 
@@ -26,26 +28,28 @@ public class AddressForm {
 		this.city = this.driver.findElement(By.id("address_city"));
 		this.state = new Select(this.driver.findElement(By.id("address_state")));
 		this.zipCode = this.driver.findElement(By.id("address_zip_code"));
-		this.usCountry = this.driver.findElement(By.id("address_country_us"));
-		this.caCountry = this.driver.findElement(By.id("address_country_canada"));
-		this.birthday = this.driver.findElement(By.id("address_birthday"));
+		this.usCountryRadio = this.driver.findElement(By.id("address_country_us"));
+		this.usCountryLabel = this.driver.findElement(By.xpath("//*[@id='new_address']/div[8]/label[1]"));
+		this.caCountryRadio = this.driver.findElement(By.id("address_country_canada"));
+		this.caCountryLabel = this.driver.findElement(By.xpath("//*[@id='new_address']/div[8]/label[2]"));
+		// this.birthday = this.driver.findElement(By.id("address_birthday"));
 		this.createAddressBtn = this.driver.findElement(By.xpath("//input[@value='Create Address']"));
 	}
 
 	public void fillForm(String firstName, String lastName, String address1, String city, String state, String zipCode,
-			String country, String birthday) {
+			String country) {
 		this.firstName.sendKeys(firstName);
 		this.lastName.sendKeys(lastName);
 		this.address1.sendKeys(address1);
 		this.city.sendKeys(city);
 		this.state.selectByVisibleText(state);
 		this.zipCode.sendKeys(zipCode);
-		if (this.usCountry.getText() == country) {
-			this.usCountry.click();
-		} else if (this.caCountry.getText() == country) {
-			this.caCountry.click();
+		if (this.usCountryLabel.getText().equals(country)) {
+			this.usCountryRadio.click();
+		} else if (this.caCountryLabel.getText().equals(country)) {
+			this.caCountryRadio.click();
 		}
-		this.birthday.sendKeys(birthday.replaceAll("[-\\./_]", ""));
+//		this.birthday.sendKeys(birthday.replaceAll("[-\\./_]", ""));
 	}
 
 	public void submitForm() {

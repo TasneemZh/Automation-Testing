@@ -5,9 +5,9 @@
     <classes>
       <class name="address.TestAddressWebsite">
         <methods>
-          <include name="testAddress"/>
-          <include name="openTab"/>
-          <include name="closeTab"/>
+          <include name="testCreateAddress"/>
+          <include name="signOutAndClose"/>
+          <include name="openBrowserAndSignIn"/>
         </methods>
       </class> <!-- address.TestAddressWebsite -->
     </classes>
