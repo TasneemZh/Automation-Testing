@@ -1,50 +1,18 @@
 <suite name="Address Book Suite">
-	<test name="Address Book Test 1">
-		<parameter name="firstName" value="Tasneem" />
-		<parameter name="lastName" value="Zahdeh" />
-		<parameter name="address1" value="123 David Road" />
-		<parameter name="city" value="New York" />
-		<parameter name="state" value="Alabama" />
-		<parameter name="zipCode" value="123123" />
-		<parameter name="country" value="United States" />
+	<test name="Create Addresses">
 		<classes>
 			<class name="address.TestAddressWebsite" />
+				<methods>
+					<include name="testCreateAddress" />
+				</methods>
 		</classes>
 	</test>
-	<test name="Address Book Test 2">
-		<parameter name="firstName" value="Layan" />
-		<parameter name="lastName" value="Khater" />
-		<parameter name="address1" value="45 Thomas Road" />
-		<parameter name="city" value="New Jersey" />
-		<parameter name="state" value="Arizona" />
-		<parameter name="zipCode" value="434343" />
-		<parameter name="country" value="Canada" />
+	<test name="View Addresses">
 		<classes>
 			<class name="address.TestAddressWebsite" />
-		</classes>
-	</test>
-	<test name="Address Book Test 3">
-		<parameter name="firstName" value="Sally" />
-		<parameter name="lastName" value="Manasrah" />
-		<parameter name="address1" value="16 Goarge Street" />
-		<parameter name="city" value="Chicago" />
-		<parameter name="state" value="Indiana" />
-		<parameter name="zipCode" value="2332333" />
-		<parameter name="country" value="Canada" />
-		<classes>
-			<class name="address.TestAddressWebsite" />
-		</classes>
-	</test>
-	<test name="Address Book Test 4">
-		<parameter name="firstName" value="Razan" />
-		<parameter name="lastName" value="Saeed" />
-		<parameter name="address1" value="PO BOX 154" />
-		<parameter name="city" value="San Francisco" />
-		<parameter name="state" value="California" />
-		<parameter name="zipCode" value="181818" />
-		<parameter name="country" value="United States" />
-		<classes>
-			<class name="address.TestAddressWebsite" />
+				<methods>
+					<include name="testViewAddress" />
+				</methods>
 		</classes>
 	</test>
 </suite>

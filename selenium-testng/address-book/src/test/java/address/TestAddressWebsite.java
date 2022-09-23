@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import browsers.OpenBrowser;
@@ -28,7 +28,7 @@ public class TestAddressWebsite {
 		this.webDriver = browser.createDriver("chrome");
 	}
 
-	@BeforeTest(enabled = true)
+	@BeforeMethod
 	public void openBrowserAndSignIn() throws InterruptedException {
 		this.webDriver.get("http://a.testaddressbook.com/sign_in");
 		Thread.sleep(3000);
@@ -39,14 +39,22 @@ public class TestAddressWebsite {
 		Thread.sleep(3000);
 		this.navBar = new NavigationBar(this.webDriver);
 		this.navBar.interacteWithNavItem("Addresses");
-		Thread.sleep(3000);
-		this.structure = new AddressStructure(this.webDriver);
 	}
 
-	@Test
-	@Parameters({ "firstName", "lastName", "address1", "city", "state", "zipCode", "country" })
+	@DataProvider(name = "user-addresses")
+	public Object[][] createAddressData() {
+		return new Object[][] {
+				{ "Tasneem", "Zahdeh", "123 David Road", "New York", "Alabama", "123123", "United States" },
+				{ "Layan", "Khater", "45 Thomas Road", "New Jersey", "Arizona", "434343", "Canada" },
+				{ "Sally", "Manasrah", "16 Goarge Street", "Chicago", "Indiana", "2332333", "Canada" },
+				{ "Razan", "Saeed", "PO BOX 154", "San Francisco", "California", "181818", "United States" } };
+	}
+
+	@Test(dataProvider = "user-addresses", enabled = false)
 	public void testCreateAddress(String firstName, String lastName, String address1, String city, String state,
 			String zipCode, String country) throws InterruptedException {
+		Thread.sleep(3000);
+		this.structure = new AddressStructure(this.webDriver);
 		int expResult = this.structure.getNumberOfRows() + 1;
 		this.navBar.interacteWithNavItem("New Address");
 		Thread.sleep(3000);
@@ -91,7 +99,45 @@ public class TestAddressWebsite {
 		Assert.assertEquals(this.structure.getNumberOfRows(), expResult);
 	}
 
-	@AfterTest
+	@Test(enabled = false)
+	public void testViewAddress() throws InterruptedException {
+		Thread.sleep(3000);
+		this.structure = new AddressStructure(this.webDriver);
+		int numberOfRows = this.structure.getNumberOfRows();
+		Map<String, String> map;
+		for (int index = 0; index < numberOfRows; index++) {
+			map = this.structure.getRowData(index);
+			this.structure.interacteWithNavItem("Show", index);
+			Thread.sleep(3000);
+			for (Map.Entry<String, String> m : map.entrySet()) {
+				String actValue = this.structure.getSpecificAddressField(m.getKey());
+				Assert.assertEquals(actValue, m.getValue());
+			}
+			this.navBar.interacteWithNavItem("List");
+			Thread.sleep(3000);
+		}
+	}
+
+	@Test
+	public void testEditAddress() throws InterruptedException {
+		Thread.sleep(3000);
+		this.structure = new AddressStructure(this.webDriver);
+		int numberOfRows = this.structure.getNumberOfRows();
+		if (numberOfRows < 0) {
+			Assert.fail("No addresses to edit!");
+		}
+		Map<String, String> map = this.structure.getRowData(0);
+		this.structure.interacteWithNavItem("Show", 0);
+		Thread.sleep(3000);
+		for (Map.Entry<String, String> m : map.entrySet()) {
+			String actValue = this.structure.getSpecificAddressField(m.getKey());
+			Assert.assertEquals(actValue, m.getValue());
+		}
+		this.navBar.interacteWithNavItem("Edit");
+		// continue
+	}
+
+	@AfterMethod
 	public void signOutAndClose() throws InterruptedException {
 		this.navBar.interacteWithNavItem("Sign out");
 		Thread.sleep(3000);
