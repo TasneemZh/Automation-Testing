@@ -2,17 +2,37 @@
 	<test name="Create Addresses">
 		<classes>
 			<class name="address.TestAddressWebsite" />
-				<methods>
-					<include name="testCreateAddress" />
-				</methods>
+			<methods>
+				<include name="testCreateAddress" />
+			</methods>
 		</classes>
 	</test>
 	<test name="View Addresses">
 		<classes>
 			<class name="address.TestAddressWebsite" />
-				<methods>
-					<include name="testViewAddress" />
-				</methods>
+			<methods>
+				<include name="testViewAddress" />
+			</methods>
+		</classes>
+	</test>
+	<test name="Edit Address">
+		<parameter name="rowIndex" value="0" />
+		<parameter name="firstName" value="Sarah" />
+		<parameter name="address1" value="54 Washinton St." />
+		<parameter name="country" value="Canada" />
+		<classes>
+			<class name="address.TestAddressWebsite" />
+			<methods>
+				<include name="testEditAddress" />
+			</methods>
+		</classes>
+	</test>
+	<test name="Delete Addresses">
+		<classes>
+			<class name="address.TestAddressWebsite" />
+			<methods>
+				<include name="testDeleteAddress" />
+			</methods>
 		</classes>
 	</test>
 </suite>

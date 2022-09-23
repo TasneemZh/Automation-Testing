@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-23T11:50:57 IDT" name="Default suite" finished-at="2022-09-23T11:51:23 IDT" duration-ms="26505">
+  <suite started-at="2022-09-23T21:57:35 IDT" name="Default suite" finished-at="2022-09-23T21:58:24 IDT" duration-ms="49209">
     <groups>
     </groups>
-    <test started-at="2022-09-23T11:50:57 IDT" name="Default test" finished-at="2022-09-23T11:51:23 IDT" duration-ms="26505">
+    <test started-at="2022-09-23T21:57:35 IDT" name="Default test" finished-at="2022-09-23T21:58:24 IDT" duration-ms="49209">
       <class name="address.TestAddressWebsite">
-        <test-method is-config="true" signature="openBrowserAndSignIn()[pri:0, instance:address.TestAddressWebsite@1623bbe5]" started-at="2022-09-23T11:50:57 IDT" name="openBrowserAndSignIn" finished-at="2022-09-23T11:51:11 IDT" duration-ms="13682" status="PASS">
+        <test-method is-config="true" signature="openBrowserAndSignIn()[pri:0, instance:address.TestAddressWebsite@4f449e8f]" started-at="2022-09-23T21:57:35 IDT" name="openBrowserAndSignIn" finished-at="2022-09-23T21:57:46 IDT" duration-ms="11570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowserAndSignIn -->
-        <test-method signature="testViewAddress()[pri:0, instance:address.TestAddressWebsite@1623bbe5]" started-at="2022-09-23T11:51:11 IDT" name="testViewAddress" finished-at="2022-09-23T11:51:20 IDT" duration-ms="9135" status="PASS">
+        <test-method signature="testDeleteAddress()[pri:0, instance:address.TestAddressWebsite@4f449e8f]" started-at="2022-09-23T21:57:46 IDT" name="testDeleteAddress" finished-at="2022-09-23T21:58:20 IDT" duration-ms="34072" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testViewAddress -->
-        <test-method is-config="true" signature="signOutAndClose()[pri:0, instance:address.TestAddressWebsite@1623bbe5]" started-at="2022-09-23T11:51:20 IDT" name="signOutAndClose" finished-at="2022-09-23T11:51:23 IDT" duration-ms="3656" status="PASS">
+        </test-method> <!-- testDeleteAddress -->
+        <test-method is-config="true" signature="signOutAndClose()[pri:0, instance:address.TestAddressWebsite@4f449e8f]" started-at="2022-09-23T21:58:20 IDT" name="signOutAndClose" finished-at="2022-09-23T21:58:24 IDT" duration-ms="3531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signOutAndClose -->
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:address.TestAddressWebsite@4f449e8f]" started-at="2022-09-23T21:58:24 IDT" name="shutDown" finished-at="2022-09-23T21:58:24 IDT" duration-ms="54" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutDown -->
       </class> <!-- address.TestAddressWebsite -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

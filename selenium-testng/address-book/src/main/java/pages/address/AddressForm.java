@@ -1,5 +1,7 @@
 package pages.address;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +24,9 @@ public class AddressForm {
 
 	public AddressForm(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public void createAddressForm() {
 		this.firstName = this.driver.findElement(By.id("address_first_name"));
 		this.lastName = this.driver.findElement(By.id("address_last_name"));
 		this.address1 = this.driver.findElement(By.id("address_street_address"));
@@ -54,5 +59,34 @@ public class AddressForm {
 
 	public void submitForm() {
 		this.createAddressBtn.click();
+	}
+
+	public String getSpecificAddressField(String addrField) {
+		WebElement rowData;
+		List<WebElement> addressFields = this.driver.findElements(By.xpath("/html/body/div/p"));
+		for (int index = 1; index <= addressFields.size(); index++) {
+			rowData = this.driver.findElement(By.xpath("/html/body/div/p[" + index + "]/span[2]"));
+			String field = rowData.getAttribute("data-test");
+			addrField = addrField.replaceAll(" ", "_").toLowerCase();
+			if (field.equals(addrField)) {
+				return rowData.getText();
+			}
+		}
+		return null;
+	}
+
+	public void editAddressField(String addrFieldId, String newValue) {
+		WebElement field = this.driver.findElement(By.id(addrFieldId));
+		if (addrFieldId.equals("address_country_us") || addrFieldId.equals("address_country_canada")) {
+			field.click();
+		} else {
+			field.clear();
+			field.sendKeys(newValue);
+		}
+	}
+
+	public void submitEditedForm() {
+		WebElement editAddressBtn = this.driver.findElement(By.xpath("//input[@value='Update Address']"));
+		editAddressBtn.click();
 	}
 }

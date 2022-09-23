@@ -5,8 +5,8 @@
     <classes>
       <class name="address.TestAddressWebsite">
         <methods>
+          <include name="testDeleteAddress"/>
           <include name="signOutAndClose"/>
-          <include name="testViewAddress"/>
           <include name="openBrowserAndSignIn"/>
         </methods>
       </class> <!-- address.TestAddressWebsite -->
