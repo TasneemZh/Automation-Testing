@@ -1,0 +1,22 @@
+<suite name="testng-suite">
+	<test name="Work on Trello">
+		<parameter name="browser" value="chrome" />
+		<parameter name="boardTitle" value="My Board" />
+		<parameter name="cardTitle" value="My Card" />
+		<parameter name="cardDescription" value="This is the description of the card." />
+		<classes>
+			<class name="trello.TrelloUsageTest" />
+		</classes>
+	</test>
+	<!-- 
+	<test name="test-case-3">
+		<parameter name="browser-type" value="firefox" />
+		<classes>
+			<class name="browsers.BrowserTest" />
+			<methods>
+				<include name="testBrowserActions" />
+			</methods>
+		</classes>
+	</test>
+-->
+</suite>

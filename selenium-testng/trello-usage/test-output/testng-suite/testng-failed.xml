@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testng-suite]">
+  <test thread-count="5" name="Work on Trello(failed)">
+    <parameter name="boardTitle" value="My Board"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="cardDescription" value="This is the description of the card."/>
+    <parameter name="cardTitle" value="My Card"/>
+    <classes>
+      <class name="trello.TrelloUsageTest">
+        <methods>
+          <include name="testLoginIn" invocation-numbers="0"/>
+          <include name="shutDown"/>
+        </methods>
+      </class> <!-- trello.TrelloUsageTest -->
+    </classes>
+  </test> <!-- Work on Trello(failed) -->
+</suite> <!-- Failed suite [testng-suite] -->
