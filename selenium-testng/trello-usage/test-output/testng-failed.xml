@@ -4,6 +4,7 @@
   <test thread-count="5" name="Work on Trello(failed)">
     <parameter name="boardTitle" value="My Board"/>
     <parameter name="browser" value="chrome"/>
+    <parameter name="secondCardTitle" value="Second Card"/>
     <parameter name="cardDescription" value="This is the description of the card."/>
     <parameter name="cardTitle" value="My Card"/>
     <classes>

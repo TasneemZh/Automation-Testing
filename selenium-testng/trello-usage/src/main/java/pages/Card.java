@@ -11,6 +11,7 @@ public class Card {
 	WebDriver driver;
 	String title;
 	int cardIndex;
+	static int cardsCnt = 0;
 
 	public Card(WebDriver driver) {
 		this.driver = driver;
@@ -19,8 +20,14 @@ public class Card {
 	public void createCardWithTitle(String title) {
 		System.out.println("Title: " + title);
 		this.title = title;
-		WebElement titleInput = this.driver
-				.findElement(By.xpath("//textarea[@placeholder='Enter a title for this card…']"));
+
+		if (Card.cardsCnt > 0) {
+			WebElement addCardBtn = this.driver.findElement(By.linkText("Add a card"));
+			addCardBtn.click();
+		} else {
+			Card.cardsCnt++;
+		}
+		WebElement titleInput = this.driver.findElement(By.xpath("//textarea[@placeholder='Enter a title for this card…']"));
 		titleInput.sendKeys(title);
 
 		WebElement createCardBtn = this.driver.findElement(By.xpath("//input[@value='Add card']"));
@@ -38,25 +45,35 @@ public class Card {
 	}
 
 	public void writeCardDescription(String description) {
-		WebElement descriptionInput = this.driver.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"));
+		WebElement descriptionInput = this.driver
+				.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"));
 		descriptionInput.sendKeys(description);
 
 		WebElement saveBtn = this.driver.findElement(By.xpath("//input[@value='Save']"));
 		saveBtn.click();
 	}
-	
+
 	public void uploadFile(String filePath) {
 		File file = new File(filePath);
 
 		WebElement attachmentBtn = this.driver.findElement(By.xpath("//a[@title='Attachment']"));
 		attachmentBtn.click();
-		
+
 		WebElement fileSelectionBtn = this.driver.findElement(By.xpath("//input[@type='file']"));
 		fileSelectionBtn.sendKeys(file.getAbsolutePath());
 	}
-	
+
 	public void downloadFile() {
 		WebElement attachmentBtn = this.driver.findElement(By.xpath("//span[@class='icon-sm icon-external-link']/.."));
 		attachmentBtn.click();
+	}
+
+	public void closeCard() {
+		WebElement closeBtn = this.driver.findElement(By.xpath("//a[@aria-label='Close dialog']"));
+		closeBtn.click();
+	}
+	
+	public boolean checkCardExistence(String title) {
+		return this.driver.findElement(By.linkText(title)).isDisplayed();
 	}
 }

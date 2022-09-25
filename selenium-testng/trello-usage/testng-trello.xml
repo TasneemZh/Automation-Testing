@@ -4,6 +4,7 @@
 		<parameter name="boardTitle" value="My Board" />
 		<parameter name="cardTitle" value="My Card" />
 		<parameter name="cardDescription" value="This is the description of the card." />
+		<parameter name="secondCardTitle" value="Second Card" />
 		<classes>
 			<class name="trello.TrelloUsageTest" />
 		</classes>

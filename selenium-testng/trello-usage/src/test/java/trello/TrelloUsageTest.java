@@ -1,6 +1,7 @@
 package trello;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Parameters;
@@ -23,11 +24,12 @@ public class TrelloUsageTest {
 	}
 
 	@Test(enabled = true)
-	@Parameters({ "browser", "boardTitle", "cardTitle", "cardDescription" })
-	public void testLoginIn(String browser, String boardTitle, String cardTitle, String cardDescription)
-			throws InterruptedException {
+	@Parameters({ "browser", "boardTitle", "cardTitle", "cardDescription", "secondCardTitle" })
+	public void testLoginIn(String browser, String boardTitle, String cardTitle, String cardDescription,
+			String secondCardTitle) throws InterruptedException {
 		this.webDriver = this.browserType.createDriver(browser);
 		this.webDriver.get("https://trello.com/login");
+		String firstTab = this.webDriver.getWindowHandle();
 		Thread.sleep(5000);
 
 		ManageCsv file = new ManageCsv();
@@ -74,6 +76,32 @@ public class TrelloUsageTest {
 		for (int i = 0; i < numOfRows; i++) {
 			Assert.assertEquals(file.getDownloadValue(i), file.getUploadValue(i));
 		}
+
+		card.closeCard();
+		Thread.sleep(5000);
+
+		String boardUrl = this.webDriver.getCurrentUrl();
+		this.webDriver.switchTo().newWindow(WindowType.TAB);
+		this.webDriver.get(boardUrl);
+		Thread.sleep(5000);
+
+		String secondTab = this.webDriver.getWindowHandle();
+		this.webDriver.switchTo().window(secondTab);
+		Thread.sleep(5000);
+
+		this.webDriver.switchTo().window(firstTab);
+		Thread.sleep(5000);
+
+		card.createCardWithTitle(secondCardTitle);
+		Thread.sleep(5000);
+
+		this.webDriver.switchTo().window(secondTab);
+		Thread.sleep(5000);
+
+		this.webDriver.navigate().refresh();
+		Thread.sleep(5000);
+		
+		Assert.assertTrue(card.checkCardExistence(secondCardTitle));
 	}
 
 	@AfterSuite
