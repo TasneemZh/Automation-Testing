@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-25T07:51:42 IDT" name="testng-suite" finished-at="2022-09-25T07:54:57 IDT" duration-ms="195074">
+  <suite started-at="2022-09-26T06:44:05 IDT" name="testng-suite" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78980">
     <groups>
     </groups>
-    <test started-at="2022-09-25T07:51:42 IDT" name="Work on Trello" finished-at="2022-09-25T07:54:57 IDT" duration-ms="195074">
+    <test started-at="2022-09-26T06:44:05 IDT" name="Work on Trello" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78980">
       <class name="trello.TrelloUsageTest">
-        <test-method signature="testLoginIn(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.TrelloUsageTest@1b7cc17c]" started-at="2022-09-25T07:51:42 IDT" name="testLoginIn" finished-at="2022-09-25T07:54:57 IDT" duration-ms="195012" status="PASS">
+        <test-method signature="testLoginIn(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.TrelloUsageTest@1a482e36]" started-at="2022-09-26T06:44:05 IDT" name="testLoginIn" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78931" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginIn -->
-        <test-method is-config="true" signature="shutDown()[pri:0, instance:trello.TrelloUsageTest@1b7cc17c]" started-at="2022-09-25T07:54:57 IDT" name="shutDown" finished-at="2022-09-25T07:55:08 IDT" duration-ms="10522" status="PASS">
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:trello.TrelloUsageTest@1a482e36]" started-at="2022-09-26T06:45:25 IDT" name="shutDown" finished-at="2022-09-26T06:45:35 IDT" duration-ms="10264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->

@@ -23,6 +23,7 @@ public class TrelloUsageTest {
 		this.browserType = new OpenBrowser();
 	}
 
+	// divide the tests
 	@Test(enabled = true)
 	@Parameters({ "browser", "boardTitle", "cardTitle", "cardDescription", "secondCardTitle" })
 	public void testLoginIn(String browser, String boardTitle, String cardTitle, String cardDescription,
@@ -43,6 +44,10 @@ public class TrelloUsageTest {
 		signIn.loginPasswordPart("Palestine_2008");
 		Thread.sleep(5000);
 
+		this.webDriver.get("https://trello.com/b/1kiutRAc/my-board"); // temporary
+		Thread.sleep(5000);
+
+
 		Boards boards = new Boards(this.webDriver);
 		boards.createNewBoard();
 		Thread.sleep(5000);
@@ -59,7 +64,7 @@ public class TrelloUsageTest {
 		card.createCardWithTitle(cardTitle);
 		Thread.sleep(3000);
 
-		card.clickOnCard();
+		card.clickOnCard(cardTitle);
 		Thread.sleep(5000);
 
 		card.writeCardDescription(cardDescription);
@@ -102,6 +107,21 @@ public class TrelloUsageTest {
 		Thread.sleep(5000);
 		
 		Assert.assertTrue(card.checkCardExistence(secondCardTitle));
+		
+		this.webDriver.switchTo().window(firstTab);
+		Thread.sleep(5000);
+
+		card.clickOnCard(cardTitle);
+		Thread.sleep(5000);
+
+		card.copyPasteDescription();
+		Thread.sleep(5000);
+
+		card.saveComment();
+		Thread.sleep(5000);
+
+		Assert.assertEquals(card.getCommentText(cardDescription), cardDescription);
+		Thread.sleep(5000);
 	}
 
 	@AfterSuite
@@ -112,3 +132,7 @@ public class TrelloUsageTest {
 		this.webDriver.quit();
 	}
 }
+
+// To-Do:
+// Separate Tests so each test would have only one assert
+// Initialize all elements above in the class Constructor
