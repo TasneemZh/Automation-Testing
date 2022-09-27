@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-26T06:44:05 IDT" name="testng-suite" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78980">
+  <suite started-at="2022-09-28T00:55:08 IDT" name="testng-suite" finished-at="2022-09-28T00:55:53 IDT" duration-ms="44992">
     <groups>
     </groups>
-    <test started-at="2022-09-26T06:44:05 IDT" name="Work on Trello" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78980">
+    <test started-at="2022-09-28T00:55:08 IDT" name="Work on Trello" finished-at="2022-09-28T00:55:53 IDT" duration-ms="44992">
       <class name="trello.TrelloUsageTest">
-        <test-method signature="testLoginIn(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.TrelloUsageTest@1a482e36]" started-at="2022-09-26T06:44:05 IDT" name="testLoginIn" finished-at="2022-09-26T06:45:24 IDT" duration-ms="78931" status="PASS">
+        <test-method signature="testLoginIn(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:trello.TrelloUsageTest@1bd4fdd]" started-at="2022-09-28T00:55:08 IDT" name="testLoginIn" finished-at="2022-09-28T00:55:53 IDT" duration-ms="44961" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -16,12 +16,12 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[My Board]]>
+                <![CDATA[First Board]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[My Card]]>
+                <![CDATA[card one]]>
               </value>
             </param>
             <param index="3">
@@ -31,14 +31,14 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[Second Card]]>
+                <![CDATA[my second card]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginIn -->
-        <test-method is-config="true" signature="shutDown()[pri:0, instance:trello.TrelloUsageTest@1a482e36]" started-at="2022-09-26T06:45:25 IDT" name="shutDown" finished-at="2022-09-26T06:45:35 IDT" duration-ms="10264" status="PASS">
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:trello.TrelloUsageTest@1bd4fdd]" started-at="2022-09-28T00:55:53 IDT" name="shutDown" finished-at="2022-09-28T00:55:54 IDT" duration-ms="260" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->

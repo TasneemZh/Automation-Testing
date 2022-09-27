@@ -1,6 +1,7 @@
 package files;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class ManageCsv {
 	String uploadFilePath;
 	String[][] downloadArr;
 	String[][] uploadArr;
+	FileReader downloadFile;
 
 	public void writeDataToUpload(String filePath) {
 		try {
@@ -36,12 +38,15 @@ public class ManageCsv {
 			e.printStackTrace();
 		}
 	}
+	
+	public String readFile(String downloadFilePath) throws FileNotFoundException {
+		this.downloadFile = new FileReader(downloadFilePath);
+		return "";
+	}
 
-	public int readDataFromDownload(String downloadFilePath) {
+	public int readDataFromDownload() {
 		try {
-			System.out.println("filePath: " + downloadFilePath);
-			FileReader downloadFile = new FileReader(downloadFilePath);
-			CSVReader csvReaderDownload = new CSVReader(downloadFile);
+			CSVReader csvReaderDownload = new CSVReader(this.downloadFile);
 
 			List<String[]> downloadRows = csvReaderDownload.readAll();
 

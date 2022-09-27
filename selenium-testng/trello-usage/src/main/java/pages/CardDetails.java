@@ -1,6 +1,7 @@
 package pages;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,42 +9,16 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Card {
+public class CardDetails {
 	WebDriver driver;
-	int cardIndex;
 	Actions actions;
 	static int cardsCnt = 0;
 
-	public Card(WebDriver driver) {
+	public CardDetails(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public void createCardWithTitle(String title) {
-		System.out.println("Title: " + title);
-
-		if (Card.cardsCnt > 0) {
-			WebElement addCardBtn = this.driver.findElement(By.linkText("Add a card"));
-			addCardBtn.click();
-		} else {
-			Card.cardsCnt++;
-		}
-		WebElement titleInput = this.driver
-				.findElement(By.xpath("//textarea[@placeholder='Enter a title for this card…']"));
-		titleInput.sendKeys(title);
-
-		WebElement createCardBtn = this.driver.findElement(By.xpath("//input[@value='Add card']"));
-		createCardBtn.click();
-	}
-
-	public void clickOnCard(String title) {
-		List<WebElement> cardsBtn = this.driver.findElements(By.xpath("//span[@class='list-card-title js-card-name']"));
-		for (int i = 0; i < cardsBtn.size(); i++) {
-			if (cardsBtn.get(i).getText().equals(title)) {
-				this.cardIndex = i;
-				cardsBtn.get(i).click();
-			}
-		}
 	}
 
 	public void writeCardDescription(String description) {
@@ -51,21 +26,23 @@ public class Card {
 				.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"));
 		descriptionInput.sendKeys(description);
 
-		WebElement saveBtn = this.driver.findElement(By.xpath("//input[@value='Save']"));
-		saveBtn.click();
+		clickOnInputButton("Save");
 	}
 
 	public void uploadFile(String filePath) {
 		File file = new File(filePath);
 
-		WebElement attachmentBtn = this.driver.findElement(By.xpath("//a[@title='Attachment']"));
-		attachmentBtn.click();
+		clickOnHyperLinkButton("Attachment");
 
 		WebElement fileSelectionBtn = this.driver.findElement(By.xpath("//input[@type='file']"));
 		fileSelectionBtn.sendKeys(file.getAbsolutePath());
 	}
 
 	public void downloadFile() {
+		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(15));
+
+		wait.until(ExpectedConditions.invisibilityOf(this.driver.findElement(By.xpath("//div[@role='alert']"))));
+
 		WebElement attachmentBtn = this.driver.findElement(By.xpath("//span[@class='icon-sm icon-external-link']/.."));
 		attachmentBtn.click();
 	}
@@ -73,10 +50,6 @@ public class Card {
 	public void closeCard() {
 		WebElement closeBtn = this.driver.findElement(By.xpath("//a[@aria-label='Close dialog']"));
 		closeBtn.click();
-	}
-
-	public boolean checkCardExistence(String title) {
-		return this.driver.findElement(By.linkText(title)).isDisplayed();
 	}
 
 	public String copyPasteDescription() {
@@ -123,5 +96,15 @@ public class Card {
 			}
 		}
 		return commentText;
+	}
+
+	public void clickOnHyperLinkButton(String btnText) {
+		WebElement hyperLinkBtn = this.driver.findElement(By.xpath("//a[@title='" + btnText + "']"));
+		hyperLinkBtn.click();
+	}
+
+	public void clickOnInputButton(String btnText) {
+		WebElement inputBtn = this.driver.findElement(By.xpath("//input[@value='" + btnText + "']"));
+		inputBtn.click();
 	}
 }

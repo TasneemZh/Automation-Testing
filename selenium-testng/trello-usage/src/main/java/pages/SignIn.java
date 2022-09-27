@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +22,7 @@ public class SignIn {
 	}
 	
 	public void loginPasswordPart(String password) {
+		this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebElement passwordField = this.driver.findElement(By.id("password"));
 		passwordField.sendKeys(password);
 		

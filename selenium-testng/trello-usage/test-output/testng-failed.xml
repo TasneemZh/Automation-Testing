@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testng-suite]">
   <test thread-count="5" name="Work on Trello(failed)">
-    <parameter name="boardTitle" value="My Board"/>
+    <parameter name="boardTitle" value="First Board"/>
     <parameter name="browser" value="chrome"/>
-    <parameter name="secondCardTitle" value="Second Card"/>
+    <parameter name="secondCardTitle" value="my second card"/>
     <parameter name="cardDescription" value="This is the description of the card."/>
-    <parameter name="cardTitle" value="My Card"/>
+    <parameter name="cardTitle" value="card one"/>
     <classes>
       <class name="trello.TrelloUsageTest">
         <methods>

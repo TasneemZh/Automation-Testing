@@ -1,10 +1,10 @@
 <suite name="testng-suite">
 	<test name="Work on Trello">
 		<parameter name="browser" value="chrome" />
-		<parameter name="boardTitle" value="My Board" />
-		<parameter name="cardTitle" value="My Card" />
+		<parameter name="boardTitle" value="First Board" />
+		<parameter name="cardTitle" value="card one" />
 		<parameter name="cardDescription" value="This is the description of the card." />
-		<parameter name="secondCardTitle" value="Second Card" />
+		<parameter name="secondCardTitle" value="my second card" />
 		<classes>
 			<class name="trello.TrelloUsageTest" />
 		</classes>
