@@ -38,8 +38,6 @@ public class Board {
 	}
 
 	public void createCardWithTitle(String title) {
-		System.out.println("Title: " + title);
-
 		if (CardDetails.cardsCnt > 0) {
 			WebElement addCardBtn = this.driver.findElement(By.linkText("Add a card"));
 			addCardBtn.click();

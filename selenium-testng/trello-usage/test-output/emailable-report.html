@@ -9,10 +9,53 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">testng-suite</th></tr>
-<tr><td><a href="#t0">Work on Trello</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">44,992</td><td></td><td></td></tr>
+<tr><td><a href="#t0">test-case-1</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">39,124</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">test-case-2</a></td><td class="num">0</td><td class="num attn">3</td><td class="num">0</td><td class="num attn">1</td><td class="num">43,476</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">4</th><th class="num attn">3</th><th class="num">0</th><th class="num attn">1</th><th class="num">82,600</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">testng-suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Work on Trello &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">trello.TrelloUsageTest</td><td><a href="#m0">testLoginIn</a></td><td rowspan="1">1664315708909</td><td rowspan="1">44961</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">testng-suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">test-case-1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">trello.TrelloUsageTest</td><td><a href="#m0">testDeletingCard</a></td><td rowspan="1">1664396632307</td><td rowspan="1">12299</td></tr><tr class="passedeven"><td><a href="#m1">testDownloadFile</a></td><td rowspan="1">1664396613321</td><td rowspan="1">14965</td></tr><tr class="passedeven"><td><a href="#m2">testFileContent</a></td><td rowspan="1">1664396628291</td><td rowspan="1">118</td></tr><tr class="passedeven"><td><a href="#m3">testUserAction</a></td><td rowspan="1">1664396628411</td><td rowspan="1">3894</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">test-case-2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">trello.TrelloUsageTest</td><td><a href="#m4">testDownloadFile</a></td><td rowspan="1">1664396666207</td><td rowspan="1">19962</td></tr><tr><th colspan="4">test-case-2 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">trello.TrelloUsageTest</td><td><a href="#m5">testDeletingCard</a></td><td rowspan="1">1664396686186</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m6">testFileContent</a></td><td rowspan="1">1664396686178</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m7">testUserAction</a></td><td rowspan="1">1664396686182</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Work on Trello</h2><h3 id="m0">trello.TrelloUsageTest#testLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>chrome</td><td>First Board</td><td>card one</td><td>This is the description of the card.</td><td>my second card</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>test-case-1</h2><h3 id="m0">trello.TrelloUsageTest#testDeletingCard</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">trello.TrelloUsageTest#testDownloadFile</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>First Board</td><td>card one</td><td>This is the description of the card.</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">trello.TrelloUsageTest#testFileContent</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">trello.TrelloUsageTest#testUserAction</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>my second card</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>test-case-2</h2><h3 id="m4">trello.TrelloUsageTest#testDownloadFile</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>First Board</td><td>card one</td><td>This is the description of the card.</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=105.0.1343.50)
+Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
+System info: host: &apos;LAPTOP-BDELJV31&apos;, ip: &apos;10.0.0.31&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [1b0a0fe4235874f2198be3a2a94392ec, clickElement {id=7b38f3f4-5f2f-47eb-9e01-1544d5ea941b}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 105.0.1343.50, ms:edgeOptions: {debuggerAddress: localhost:55864}, msedge: {msedgedriverVersion: 105.0.1343.33 (4122bb4646b3..., userDataDir: C:\Users\USER\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55864/devtoo..., se:cdpVersion: 105.0.1343.50, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: msedge on WINDOWS (1b0a0fe4235874f2198be3a2a94392ec)] -&gt; link text: Add a card]
+Session ID: 1b0a0fe4235874f2198be3a2a94392ec
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at pages.Board.createCardWithTitle(Board.java:43)
+	at trello.TrelloUsageTest.testDownloadFile(TrelloUsageTest.java:74)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">trello.TrelloUsageTest#testDeletingCard</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method trello.TrelloUsageTest.testDeletingCard() on instance trello.TrelloUsageTest@408d971b depends on not successfully finished methods 
+[trello.TrelloUsageTest.testUserAction() on instance trello.TrelloUsageTest@408d971b
+trello.TrelloUsageTest.testFileContent() on instance trello.TrelloUsageTest@408d971b
+trello.TrelloUsageTest.testDownloadFile() on instance trello.TrelloUsageTest@408d971b]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">trello.TrelloUsageTest#testFileContent</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method trello.TrelloUsageTest.testFileContent() on instance trello.TrelloUsageTest@408d971b depends on not successfully finished methods 
+[trello.TrelloUsageTest.testDownloadFile() on instance trello.TrelloUsageTest@408d971b]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">trello.TrelloUsageTest#testUserAction</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method trello.TrelloUsageTest.testUserAction() on instance trello.TrelloUsageTest@408d971b depends on not successfully finished methods 
+[trello.TrelloUsageTest.testFileContent() on instance trello.TrelloUsageTest@408d971b
+trello.TrelloUsageTest.testDownloadFile() on instance trello.TrelloUsageTest@408d971b]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

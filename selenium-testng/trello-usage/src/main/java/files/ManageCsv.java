@@ -13,9 +13,9 @@ import com.opencsv.exceptions.CsvException;
 
 public class ManageCsv {
 	String uploadFilePath;
-	String[][] downloadArr;
 	String[][] uploadArr;
-	FileReader downloadFile;
+	String[][] downloadArr;
+	FileReader userFile;
 
 	public void writeDataToUpload(String filePath) {
 		try {
@@ -38,29 +38,43 @@ public class ManageCsv {
 			e.printStackTrace();
 		}
 	}
-	
-	public String readFile(String downloadFilePath) throws FileNotFoundException {
-		this.downloadFile = new FileReader(downloadFilePath);
+
+	public String readFile(String filePath) throws FileNotFoundException {
+		this.userFile = new FileReader(filePath);
 		return "";
 	}
 
-	public int readDataFromDownload() {
+	public int getFileNumnerOfRows(String filePath, boolean isDownload) {
 		try {
-			CSVReader csvReaderDownload = new CSVReader(this.downloadFile);
+			FileReader userFile;
+			if (isDownload) {
+				userFile = this.userFile;
+			} else {
+				userFile = new FileReader(filePath);
+			}
+			CSVReader csvReader = new CSVReader(userFile);
 
-			List<String[]> downloadRows = csvReaderDownload.readAll();
+			List<String[]> fileRows = csvReader.readAll();
 
-			int totalRows = downloadRows.size();
-			downloadArr = new String[totalRows][1];
+			int totalRows = fileRows.size();
+			if (isDownload) {
+				this.downloadArr = new String[totalRows][1];
+			} else {
+				this.uploadArr = new String[totalRows][1];
+			}
 
 			int numOfRows = 0;
-			for (String[] row : downloadRows) {
-				downloadArr[numOfRows] = row;
+			for (String[] row : fileRows) {
+				if (isDownload) {
+					this.downloadArr[numOfRows] = row;
+				} else {
+					this.uploadArr[numOfRows] = row;
+				}
 				numOfRows++;
 			}
 
-			csvReaderDownload.close();
-			System.out.println("Download Number of rows: " + totalRows);
+			csvReader.close();
+			System.out.println("The File number of rows: " + totalRows);
 			return totalRows;
 		} catch (CsvException | IOException e) {
 			e.printStackTrace();
@@ -68,38 +82,32 @@ public class ManageCsv {
 		}
 	}
 
-	public int readDataFromUpload(String uploadFilePath) {
-		try {
-			FileReader uploadFile = new FileReader(uploadFilePath);
-			CSVReader csvReaderUpload = new CSVReader(uploadFile);
+//	public int readDataFromUpload() {
+//		try {
+//			FileReader uploadFile = new FileReader(uploadFilePath);
+//			CSVReader csvReaderUpload = new CSVReader(uploadFile);
+//
+//			List<String[]> uploadRows = csvReaderUpload.readAll();
+//
+//			int totalRows = uploadRows.size();
+//			uploadArr = new String[totalRows][1];
+//
+//			int numOfRows = 0;
+//			for (String[] row : uploadRows) {
+//				uploadArr[numOfRows] = row;
+//				numOfRows++;
+//			}
+//
+//			csvReaderUpload.close();
+//			System.out.println("Upload Number of rows: " + totalRows);
+//			return totalRows;
+//		} catch (CsvException | IOException e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//	}
 
-			List<String[]> uploadRows = csvReaderUpload.readAll();
-
-			int totalRows = uploadRows.size();
-			uploadArr = new String[totalRows][1];
-
-			int numOfRows = 0;
-			for (String[] row : uploadRows) {
-				uploadArr[numOfRows] = row;
-				numOfRows++;
-			}
-
-			csvReaderUpload.close();
-			System.out.println("Upload Number of rows: " + totalRows);
-			return totalRows;
-		} catch (CsvException | IOException e) {
-			e.printStackTrace();
-			return 0;
-		}
-	}
-
-	public String getDownloadValue(int index) {
-		System.out.println("Download value: " + downloadArr[index][0]);
-		return downloadArr[index][0];
-	}
-
-	public String getUploadValue(int index) {
-		System.out.println("Upload value: " + uploadArr[index][0]);
-		return uploadArr[index][0];
+	public String getFileValue(int index, boolean isDownload) {
+		return isDownload ? downloadArr[index][0] : uploadArr[index][0];
 	}
 }

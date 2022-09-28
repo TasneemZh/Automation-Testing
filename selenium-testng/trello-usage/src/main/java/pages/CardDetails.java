@@ -22,8 +22,10 @@ public class CardDetails {
 	}
 
 	public void writeCardDescription(String description) {
-		WebElement descriptionInput = this.driver
-				.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"));
+		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+		WebElement descriptionInput = wait.until(ExpectedConditions.visibilityOf(
+				this.driver.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"))));
+
 		descriptionInput.sendKeys(description);
 
 		clickOnInputButton("Save");
@@ -39,8 +41,7 @@ public class CardDetails {
 	}
 
 	public void downloadFile() {
-		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(15));
-
+		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOf(this.driver.findElement(By.xpath("//div[@role='alert']"))));
 
 		WebElement attachmentBtn = this.driver.findElement(By.xpath("//span[@class='icon-sm icon-external-link']/.."));
