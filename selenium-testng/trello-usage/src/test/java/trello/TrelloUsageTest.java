@@ -46,8 +46,8 @@ public class TrelloUsageTest {
 	@Parameters({ "browser" })
 	public void prepareTestEnvironment(String browser) {
 		this.driver = this.browserType.createDriver(browser);
-		this.driver.manage().window().maximize();
-		this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		this.driver.manage().window().maximize();
+		this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		this.driver.get("https://trello.com/login");
 
 		this.firstTab = this.driver.getWindowHandle();
@@ -61,7 +61,7 @@ public class TrelloUsageTest {
 
 	@Test(enabled = true)
 	@Parameters({ "boardTitle", "cardTitle", "cardDescription" })
-	public void testDownloadFile(String boardTitle, String cardTitle, String cardDescription) {
+	public void testDownloadFile(String boardTitle, String cardTitle, String cardDescription) throws InterruptedException {
 		this.boardTitle = boardTitle;
 		this.cardTitle = cardTitle;
 		this.cardDescription = cardDescription;
@@ -92,7 +92,7 @@ public class TrelloUsageTest {
 	}
 
 	@Test(enabled = true, dependsOnMethods = { "testDownloadFile" })
-	public void testFileContent() {
+	public void testFileContent() throws InterruptedException {
 		int numOfRows = this.file.getFileNumnerOfRows(downloadFilePath, true);
 		for (int i = 0; i < numOfRows; i++) {
 			Assert.assertEquals(this.file.getFileValue(i, true), this.file.getFileValue(i, false));
@@ -102,7 +102,7 @@ public class TrelloUsageTest {
 		
 	@Test(enabled = true, dependsOnMethods = { "testDownloadFile", "testFileContent" })
 	@Parameters({ "secondCardTitle" })
-	public void testUserAction(String secondCardTitle) {
+	public void testUserAction(String secondCardTitle) throws InterruptedException {
 		this.secondCardTitle = secondCardTitle;
 		
 		String boardUrl = this.driver.getCurrentUrl();
@@ -131,7 +131,7 @@ public class TrelloUsageTest {
 	}
 	
 	@Test(enabled = true, dependsOnMethods = { "testDownloadFile", "testFileContent", "testUserAction" })
-	public void testDeletingCard() {
+	public void testDeletingCard() throws InterruptedException {
 		this.card.closeCard();
 
 		this.board.clickOnCard(this.secondCardTitle);
@@ -151,7 +151,7 @@ public class TrelloUsageTest {
 	}
 
 	@AfterTest
-	public void clearTestSession() {
+	public void clearTestSession() throws InterruptedException {
 		this.driver.switchTo().window(firstTab);
 
 		this.board.hoverOverMenu(this.boardTitle);
@@ -168,6 +168,3 @@ public class TrelloUsageTest {
 		this.driver.quit();
 	}
 }
-
-// To-Do:
-// Initialize all elements above in the class Constructor

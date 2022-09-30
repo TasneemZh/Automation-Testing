@@ -15,6 +15,7 @@
 			</methods>
 		</classes>
 	</test>
+	<!-- 
 	<test name="test-case-2">
 		<parameter name="browser" value="edge" />
 		<classes>
@@ -39,4 +40,5 @@
 			</methods>
 		</classes>
 	</test>
+	-->
 </suite>

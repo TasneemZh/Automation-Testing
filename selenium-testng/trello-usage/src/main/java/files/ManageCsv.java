@@ -82,31 +82,6 @@ public class ManageCsv {
 		}
 	}
 
-//	public int readDataFromUpload() {
-//		try {
-//			FileReader uploadFile = new FileReader(uploadFilePath);
-//			CSVReader csvReaderUpload = new CSVReader(uploadFile);
-//
-//			List<String[]> uploadRows = csvReaderUpload.readAll();
-//
-//			int totalRows = uploadRows.size();
-//			uploadArr = new String[totalRows][1];
-//
-//			int numOfRows = 0;
-//			for (String[] row : uploadRows) {
-//				uploadArr[numOfRows] = row;
-//				numOfRows++;
-//			}
-//
-//			csvReaderUpload.close();
-//			System.out.println("Upload Number of rows: " + totalRows);
-//			return totalRows;
-//		} catch (CsvException | IOException e) {
-//			e.printStackTrace();
-//			return 0;
-//		}
-//	}
-
 	public String getFileValue(int index, boolean isDownload) {
 		return isDownload ? downloadArr[index][0] : uploadArr[index][0];
 	}

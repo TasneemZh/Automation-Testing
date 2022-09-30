@@ -1,6 +1,7 @@
 package pages;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -12,51 +13,69 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import browsers.TakeScreenshot;
+
 public class CardDetails {
 	WebDriver driver;
 	Actions actions;
+	WebDriverWait wait;
+	TakeScreenshot screenshot;
 	static int cardsCnt = 0;
 
 	public CardDetails(WebDriver driver) {
 		this.driver = driver;
+		this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+		this.screenshot = new TakeScreenshot(driver);
 	}
 
-	public void writeCardDescription(String description) {
-		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-		WebElement descriptionInput = wait.until(ExpectedConditions.visibilityOf(
+	public void writeCardDescription(String description) throws InterruptedException {
+		WebElement descriptionInput = this.wait.until(ExpectedConditions.visibilityOf(
 				this.driver.findElement(By.xpath("//textarea[@placeholder='Add a more detailed description…']"))));
 
 		descriptionInput.sendKeys(description);
 
 		clickOnInputButton("Save");
+		Thread.sleep(3000);
 	}
 
-	public void uploadFile(String filePath) {
-		File file = new File(filePath);
+	public void uploadFile(String filePath) throws InterruptedException {
+		try {
+			this.screenshot.takeScreenshot("before_attachment.jpg");
+			File file = new File(filePath);
 
-		clickOnHyperLinkButton("Attachment");
+			clickOnHyperLinkButton("Attachment");
 
-		WebElement fileSelectionBtn = this.driver.findElement(By.xpath("//input[@type='file']"));
-		fileSelectionBtn.sendKeys(file.getAbsolutePath());
+			WebElement fileSelectionBtn = this.driver.findElement(By.xpath("//input[@type='file']"));
+			fileSelectionBtn.sendKeys(file.getAbsolutePath());
+			Thread.sleep(3000);
+			this.screenshot.takeScreenshot("after_attachment.jpg");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void downloadFile() {
-		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.invisibilityOf(this.driver.findElement(By.xpath("//div[@role='alert']"))));
+	public void downloadFile() throws InterruptedException {
+//		this.wait.until(ExpectedConditions.invisibilityOf(this.driver.findElement(By.xpath("//div[@role='alert']"))));
 
+		Thread.sleep(3000);
 		WebElement attachmentBtn = this.driver.findElement(By.xpath("//span[@class='icon-sm icon-external-link']/.."));
 		attachmentBtn.click();
+		Thread.sleep(5000);
 	}
 
-	public void closeCard() {
+	public void closeCard() throws InterruptedException {
 		WebElement closeBtn = this.driver.findElement(By.xpath("//a[@aria-label='Close dialog']"));
 		closeBtn.click();
+		Thread.sleep(3000);
 	}
 
-	public String copyPasteDescription() {
+	public String copyPasteDescription() throws InterruptedException {
 		WebElement descriptionBtn = this.driver
 				.findElement(By.xpath("//div[@class='description-content js-desc-content']/*/p"));
+		Thread.sleep(3000);
+
 		WebElement commentSection = this.driver.findElement(By.xpath("//textarea[@placeholder='Write a comment…']"));
+		Thread.sleep(3000);
 
 		this.actions = new Actions(driver);
 		actions.click(descriptionBtn);
@@ -81,9 +100,10 @@ public class CardDetails {
 		return commentSection.getText();
 	}
 
-	public void saveComment() {
+	public void saveComment() throws InterruptedException {
 		WebElement saveCommentBtn = this.driver.findElement(By.xpath("//div[@class='comment-box']/*/input"));
 		saveCommentBtn.click();
+		Thread.sleep(3000);
 	}
 
 	public String getCommentText(String comment) {

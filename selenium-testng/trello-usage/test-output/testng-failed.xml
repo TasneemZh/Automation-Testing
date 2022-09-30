@@ -5,8 +5,8 @@
   <parameter name="secondCardTitle" value="my second card"/>
   <parameter name="cardDescription" value="This is the description of the card."/>
   <parameter name="cardTitle" value="card one"/>
-  <test thread-count="5" name="test-case-2(failed)">
-    <parameter name="browser" value="edge"/>
+  <test thread-count="5" name="test-case-1(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="trello.TrelloUsageTest">
         <methods>
@@ -20,5 +20,5 @@
         </methods>
       </class> <!-- trello.TrelloUsageTest -->
     </classes>
-  </test> <!-- test-case-2(failed) -->
+  </test> <!-- test-case-1(failed) -->
 </suite> <!-- Failed suite [testng-suite] -->
